@@ -13,8 +13,7 @@ export default function Movie(props) {
 
   // let id = 1;
   // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
-  const { id } = useParams();
-  const { path, url } = useRouteMatch();
+  
 
   useEffect(() => {
     axios
@@ -22,15 +21,13 @@ export default function Movie(props) {
       .then((response) => {
         // Study this response with a breakpoint or log statements
         // and set the response data as the 'movie' slice of state
-        setMovie(response.data);
-        console.log("response.data = ", response.data);
       })
       .catch((error) => {
         console.error(error);
       });
     // This effect should run every time time
     // the `id` changes... How could we do this?
-  }, [id]);
+  }, []);
 
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = evt => { }

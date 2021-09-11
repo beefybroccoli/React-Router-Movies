@@ -9,8 +9,8 @@ export default function SavedList(props) {
         <span className="saved-movie">{movie.title}</span>
       ))}
       <div className="home-button">
-        <Link to="/">Home</Link>
-      </div>
+        Home
+        </div>
     </div>
   );
 }

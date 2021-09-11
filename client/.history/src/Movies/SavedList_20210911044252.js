@@ -8,9 +8,7 @@ export default function SavedList(props) {
       {props.list.map((movie) => (
         <span className="saved-movie">{movie.title}</span>
       ))}
-      <div className="home-button">
-        <Link to="/">Home</Link>
-      </div>
+      <div className="home-button">Home</div>
     </div>
   );
 }
