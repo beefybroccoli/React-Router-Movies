@@ -35,7 +35,7 @@ export default function App() {
   const addToSavedList = (object) => {
     // This is stretch. Prevent the same movie from being "saved" more than once
     // saved.includes(`http://localhost:3000/movies/${id}`) === false &&
-    setSaved([...saved, object]);
+      setSaved([...saved, `http://localhost:3000/movies/${id}`]);
   };
 
   const helper_render = () => {

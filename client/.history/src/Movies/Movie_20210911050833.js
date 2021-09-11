@@ -34,10 +34,11 @@ export default function Movie(props) {
   }, [id]);
 
   // Uncomment this only when you have moved on to the stretch goals
+  // const saveMovie = evt => { }
   const saveMovie = (event) => {
-    // console.log("Movie.js save click detected");
     event.stopPropagation();
-    props.addToSavedList({ id: id, movie: movie });
+    //props.addToSavedList={addToSavedList}
+    props.addToSavedList(id);
   };
 
   if (!movie) {

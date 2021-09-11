@@ -34,10 +34,11 @@ export default function Movie(props) {
   }, [id]);
 
   // Uncomment this only when you have moved on to the stretch goals
-  const saveMovie = (event) => {
-    // console.log("Movie.js save click detected");
+  // const saveMovie = evt => { }
+  const cb_onClick = (event) => {
     event.stopPropagation();
-    props.addToSavedList({ id: id, movie: movie });
+    //props.addToSavedList={addToSavedList}
+    props.addToSavedList(id);
   };
 
   if (!movie) {
@@ -50,7 +51,7 @@ export default function Movie(props) {
     <div className="save-wrapper">
       <MovieCard movie={movie} />
 
-      <div className="save-button" onClick={saveMovie}>
+      <div className="save-button" onClick={cb_onClick}>
         Save
       </div>
     </div>

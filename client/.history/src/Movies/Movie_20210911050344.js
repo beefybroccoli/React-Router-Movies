@@ -24,7 +24,7 @@ export default function Movie(props) {
         // Study this response with a breakpoint or log statements
         // and set the response data as the 'movie' slice of state
         setMovie(response.data);
-        // console.log("response.data = ", response.data);
+        console.log("response.data = ", response.data);
       })
       .catch((error) => {
         console.error(error);
@@ -34,11 +34,11 @@ export default function Movie(props) {
   }, [id]);
 
   // Uncomment this only when you have moved on to the stretch goals
-  const saveMovie = (event) => {
-    // console.log("Movie.js save click detected");
-    event.stopPropagation();
-    props.addToSavedList({ id: id, movie: movie });
-  };
+  // const saveMovie = evt => { }
+  const cb_onClick = () =>{
+    //props.addToSavedList={addToSavedList}
+    
+  }
 
   if (!movie) {
     return <div>Loading movie information...</div>;
@@ -50,9 +50,16 @@ export default function Movie(props) {
     <div className="save-wrapper">
       <MovieCard movie={movie} />
 
-      <div className="save-button" onClick={saveMovie}>
-        Save
-      </div>
+      <div className="save-button" onClick= {cb_onClick}>Save</div>
     </div>
   );
 }
+
+/*
+      <h3>Actors</h3>
+      {stars.map((star) => (
+        <div key={star} className="movie-star">
+          {star}
+        </div>
+      ))}
+*/

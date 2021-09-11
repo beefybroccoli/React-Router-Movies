@@ -19,10 +19,10 @@ export default function App() {
           // Study this response with a breakpoint or log statements
           // and set the response data as the 'movieList' slice of state
           setMovieList(response.data);
-          // console.log("response.data = ", response.data);
+          console.log("response.data = ", response.data);
         })
         .catch((error) => {
-          // console.error("Server Error", error);
+          console.error("Server Error", error);
         });
     };
     getMovies();
@@ -32,19 +32,23 @@ export default function App() {
     movieList.length > 0 && set_stateLoding(false);
   }, [movieList]);
 
-  const addToSavedList = (object) => {
+  const addToSavedList = (id) => {
     // This is stretch. Prevent the same movie from being "saved" more than once
-    // saved.includes(`http://localhost:3000/movies/${id}`) === false &&
-    setSaved([...saved, object]);
   };
 
   const helper_render = () => {
     return (
       <div>
-        <SavedList list={saved} />
+        <SavedList
+          list={
+            [
+              /* This is stretch */
+            ]
+          }
+        />
         <Switch>
           <Route exact path="/">
-            <MovieList movies={movieList} addToSavedList={addToSavedList} />
+            <MovieList movies={movieList} />
           </Route>
           <Route path={"/movies/:id"}>
             <Movie addToSavedList={addToSavedList} />
