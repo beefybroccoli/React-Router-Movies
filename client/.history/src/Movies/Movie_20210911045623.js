@@ -44,7 +44,13 @@ export default function Movie(props) {
 
   return (
     <div className="save-wrapper">
-      <MovieCard movie={movie} />
+      <MovieCard movie={{ title, director, metascore }} />
+      <h3>Actors</h3>
+      {stars.map((star) => (
+        <div key={star} className="movie-star">
+          {star}
+        </div>
+      ))}
 
       <div className="save-button">Save</div>
     </div>
@@ -52,10 +58,5 @@ export default function Movie(props) {
 }
 
 /*
-      <h3>Actors</h3>
-      {stars.map((star) => (
-        <div key={star} className="movie-star">
-          {star}
-        </div>
-      ))}
+
 */

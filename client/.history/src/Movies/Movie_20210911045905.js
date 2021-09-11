@@ -44,7 +44,7 @@ export default function Movie(props) {
 
   return (
     <div className="save-wrapper">
-      <MovieCard movie={movie} />
+      <MovieCard movie={{ title, director, metascore }} />
 
       <div className="save-button">Save</div>
     </div>

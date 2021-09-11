@@ -7,7 +7,7 @@ import {
   Switch,
   NavLink,
 } from "react-router-dom";
-import MovieCard from "./MovieCard";
+import { MovieDetails } from "./MovieList";
 
 export default function Movie(props) {
   const [movie, setMovie] = useState();
@@ -44,7 +44,13 @@ export default function Movie(props) {
 
   return (
     <div className="save-wrapper">
-      <MovieCard movie={movie} />
+      <MovieDetails movie={}/>
+      <h3>Actors</h3>
+      {stars.map((star) => (
+        <div key={star} className="movie-star">
+          {star}
+        </div>
+      ))}
 
       <div className="save-button">Save</div>
     </div>
@@ -52,10 +58,5 @@ export default function Movie(props) {
 }
 
 /*
-      <h3>Actors</h3>
-      {stars.map((star) => (
-        <div key={star} className="movie-star">
-          {star}
-        </div>
-      ))}
+
 */
